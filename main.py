@@ -11,8 +11,8 @@ dateBO = dict()
 menu = ['See people', 'Add People', 'Search by keyword', 'Search by CPF', 'Exit']
 option = 0
 
-ok = True
-while ok:
+okMain = True
+while okMain:
     for c in range(0, len(menu)):
         print(f'{cl["b"]}{c + 1}{cl["limit"]} - {menu[c]}')
     
@@ -71,7 +71,7 @@ while ok:
         people["name"] = str(input('Name: ')).title()
         people["cpf"] = str(input('CPF: ' ))
         people["des"] = str(input('History: '))
-        print(people)
+        dataBase.append(people.copy())
     
     # search people by people
     
@@ -79,6 +79,9 @@ while ok:
         nameRAM = str(input('Search by keyword: ')).strip().title()
 
     elif option == 4:
+        print('Loading')
+
+    elif option == 5:
         break
     
     else:
