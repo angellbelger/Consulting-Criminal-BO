@@ -1,4 +1,6 @@
 import datetime
+from utl.lay import colour as cl
+from utl.aqv import readint
 
 print('\nHello, World.\n')
 
@@ -12,10 +14,10 @@ option = 0
 ok = True
 while ok:
     for c in range(0, len(menu)):
-        print(f'{c + 1} - {menu[c]}')
+        print(f'{cl["b"]}{c + 1}{cl["limit"]} - {menu[c]}')
     
     option = 0
-    option = int(input('Option: '))
+    option = int(input(f'{cl["b"]}\nOption:{cl["limit"]} '))
 
     # readin data base
 
@@ -28,47 +30,48 @@ while ok:
     elif option == 2:
         date = datetime.datetime.now()
         answer = ''
-        answer = str(input(f'It is ok? {date.day}/{date.month}/{date.year}\n[ Y ] | [ N ]: ')).title()[0]
+        answer = str(input(f'It is ok? {date.day}/{date.month}/{date.year}\n[ {cl["b"]}Y{cl["limit"]} ] | [ {cl["r"]}N{cl["limit"]} ]: ')).title()[0]
         
         if answer == 'Y':
             dateBO["dateDay"] = date.day
             dateBO["dateMonth"] = date.month
             dateBO["dateYear"] = date.year
-        else:
-            people["date"] = str(input('Type the data like this Ex. 01//07/2021'))
 
+        else:
             ok = True
             while ok:
-                dateBO["dateDay"] = int(input('Day:'))
-                if date["dateDay"] < 1 or date["dateDay"] > 31:
-                    print('Please, type a valid day.')
+                dateBO["dateDay"] = readint('Day: ')
+                if dateBO["dateDay"] < 1 or dateBO["dateDay"] > 31:
+                    print(f'{cl["r"]}Please, type a valid day.{cl["limit"]}')
                     continue
                 else:
                     ok = False
             
             ok = True
             while ok:
-                dateBO["dateMonth"] = int(input('Month:'))
-                if date["dateMonth"] < 1 or date["dateMonth"] > 12:
-                    print('Please, type a valid month.')
+                dateBO["dateMonth"] = readint('Month: ')
+                if dateBO["dateMonth"] < 1 or dateBO["dateMonth"] > 12:
+                    print(f'{cl["r"]}Please, type a valid month.{cl["limit"]}')
                     continue
                 else:
                     ok = False
             
             ok = True
             while ok:
-                dateBO["dateYear"] = int(input('Year:'))
-                if date["dateYear"] < 2000 or date.year:
-                    print('Please, type a valid year.')
+                dateBO["dateYear"] = readint('Year: ')
+                if dateBO["dateYear"] < 2000 or dateBO["dateYear"] > date.year:
+                    print(f'{cl["r"]}Please, type a valid year.{cl["limit"]}')
                     continue
+
                 else:
                     ok = False
 
         print(dateBO)
         people["date"] = dateBO
-        people["name"] = str(input('Name: '))
+        people["name"] = str(input('Name: ')).title()
         people["cpf"] = str(input('CPF: ' ))
         people["des"] = str(input('History: '))
+        print(people)
     
     # search people by people
     
