@@ -17,9 +17,13 @@ while ok:
     option = 0
     option = int(input('Option: '))
 
+    # readin data base
+
     if option == 1:
         for c in range(0, len(dataBase)):
             print(f'{dataBase[c]}')
+
+    # add people
 
     elif option == 2:
         date = datetime.datetime.now()
@@ -32,6 +36,7 @@ while ok:
             dateBO["dateYear"] = date.year
         else:
             people["date"] = str(input('Type the data like this Ex. 01//07/2021'))
+
             ok = True
             while ok:
                 dateBO["dateDay"] = int(input('Day:'))
@@ -64,7 +69,9 @@ while ok:
         people["name"] = str(input('Name: '))
         people["cpf"] = str(input('CPF: ' ))
         people["des"] = str(input('History: '))
-        
+    
+    # search people by people
+    
     elif option == 3:
         nameRAM = str(input('Search by keyword: ')).strip().title()
 
