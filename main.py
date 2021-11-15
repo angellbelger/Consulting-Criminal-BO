@@ -8,7 +8,7 @@ print('\nHello, World.\n')
 dataBase = list()
 people = dict()
 dateBO = dict()
-menu = ['See people', 'Add People', 'Search by keyword', 'Search by CPF', 'Exit']
+menu = ['See people', 'Add People', 'Search by keyword', 'Exit']
 option = 0
 
 okMain = True
@@ -79,9 +79,6 @@ while okMain:
         nameRAM = str(input('Search by keyword: ')).strip().title()
 
     elif option == 4:
-        print('Loading')
-
-    elif option == 5:
         break
     
     else:
