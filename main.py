@@ -4,7 +4,6 @@ from utl.aqv import readint, titleFor
 
 print('\nHello, World.\n')
 
-
 dataBase = list()
 people = dict()
 dateBO = dict()
