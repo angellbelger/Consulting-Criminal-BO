@@ -1,29 +1,37 @@
 import datetime
 from utl.lay import colour as cl
-from utl.aqv import readint, titleFor
+from utl.aqv import readint, titleFor, tiposAtendimentos, line
 
 print('\nHello, World.\n')
 
 dataBase = list()
 people = dict()
 dateBO = dict()
-menu = ['See people', 'Add People', 'Search by keyword', 'Exit']
+menu = ['Data Base', 'Add People', 'Search by keyword', 'Exit']
 option = 0
 
 okMain = True
 while okMain:
+    titleFor('BO', 10)
     for c in range(0, len(menu)):
         print(f'{cl["b"]}{c + 1}{cl["limit"]} - {menu[c]}')
+    
     
     option = 0
     option = int(input(f'{cl["b"]}\nOption:{cl["limit"]} '))
 
-    # readin data base
+    # reading data base
 
     if option == 1:
-        titleFor('Date Base')
+        titleFor('Data Base')
         for c in range(0, len(dataBase)):
-            print(f'{cl["b"]}{c}{cl["limit"]} - {dataBase[c]["name"]}')
+            print(f'{cl["p"]}{c}{cl["limit"]} - {dataBase[c]["name"]}')
+
+        search = readint('\nSee people: ')
+        for c in range(0, len(dataBase)):
+            if search == dataBase[c]:
+                print(f'{dataBase[c]}')
+        line(27)
 
     # add people
 
@@ -68,12 +76,25 @@ while okMain:
 
         print(dateBO)
         people["date"] = dateBO
+        people["name"] = str(input('Nome: ')).strip().title()
         people["reference"] = str(input('Referência: ')).title()
         people["adress"] = str(input('Endereço: ' )).strip()
         people["time"] = str(input('Horário: ')).strip()
         people["gcm"] = str(input('GCM: ')).strip().title()
         people["trigger"] = str(input('Acionamento por: ')).title().strip()
-        
+
+        tip = 0
+        print('\nTipo de Atendimento\n')
+        while tip > len(tiposAtendimentos) or tip < 1:
+
+            for c in range(0, len(tiposAtendimentos)):
+                print(f'{c} - {tiposAtendimentos[c]}\n')
+
+            tip = readint('Tipo de Atendimento: ')
+
+            for c in range(0, len(tiposAtendimentos)):
+                if tip == tiposAtendimentos[c]:
+                    people["type"] = tiposAtendimentos[c]
         
         dataBase.append(people.copy())
     
