@@ -23,7 +23,7 @@ while okMain:
     if option == 1:
         titleFor('Date Base')
         for c in range(0, len(dataBase)):
-            print(f'{dataBase[c]}')
+            print(f'{cl["b"]}{c}{cl["limit"]} - {dataBase[c]["name"]}')
 
     # add people
 
@@ -68,9 +68,13 @@ while okMain:
 
         print(dateBO)
         people["date"] = dateBO
-        people["name"] = str(input('Name: ')).title()
-        people["cpf"] = str(input('CPF: ' ))
-        people["des"] = str(input('History: '))
+        people["reference"] = str(input('Referência: ')).title()
+        people["adress"] = str(input('Endereço: ' )).strip()
+        people["time"] = str(input('Horário: ')).strip()
+        people["gcm"] = str(input('GCM: ')).strip().title()
+        people["trigger"] = str(input('Acionamento por: ')).title().strip()
+        
+        
         dataBase.append(people.copy())
     
     # search people by people
