@@ -16,7 +16,6 @@ while okMain:
     for c in range(0, len(menu)):
         print(f'{cl["b"]}{c + 1}{cl["limit"]} - {menu[c]}')
     
-    
     option = 0
     option = int(input(f'{cl["b"]}\nOption:{cl["limit"]} '))
 
