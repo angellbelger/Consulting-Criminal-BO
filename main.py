@@ -100,7 +100,7 @@ while okMain:
     # search people by people
     
     elif option == 3:
-        nameRAM = str(input('Search by keyword: ')).strip().title()
+        print('Loading')
 
     elif option == 4:
         break
