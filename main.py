@@ -23,13 +23,7 @@ while okMain:
 
     if option == 1:
         titleFor('Data Base')
-        for c in range(0, len(dataBase)):
-            print(f'{cl["p"]}{c}{cl["limit"]} - {dataBase[c]["name"]}')
-
-        search = readint('\nSee people: ')
-        for c in range(0, len(dataBase)):
-            if search == dataBase[c]:
-                print(f'{dataBase[c]}')
+        print(dataBase)
         line(27)
 
     # add people
