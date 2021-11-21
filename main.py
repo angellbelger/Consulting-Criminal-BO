@@ -78,7 +78,8 @@ while okMain:
 
         tip = 0
         print('\nTipo de Atendimento\n')
-        while tip > len(tiposAtendimentos) or tip < 1:
+        ok = True
+        while ok:
 
             for c in range(0, len(tiposAtendimentos)):
                 print(f'{c} - {tiposAtendimentos[c]}\n')
@@ -88,7 +89,7 @@ while okMain:
             for c in range(0, len(tiposAtendimentos)):
                 if tip == tiposAtendimentos[c]:
                     people["type"] = tiposAtendimentos[c]
-        
+            ok = False
         dataBase.append(people.copy())
     
     # search people by people
