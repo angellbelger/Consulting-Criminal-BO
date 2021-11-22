@@ -86,9 +86,7 @@ while okMain:
 
             tip = readint('Tipo de Atendimento: ')
 
-            for c in range(0, len(tiposAtendimentos)):
-                if tip == tiposAtendimentos[c]:
-                    people["type"] = tiposAtendimentos[c]
+            people["type"] = tiposAtendimentos[tip]
             ok = False
         dataBase.append(people.copy())
     
