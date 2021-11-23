@@ -14,10 +14,10 @@ def readint(msg):
 
 
 def titleFor(txt, num1=0):
-    num1 = len(txt) * 2
-    print('-' * num1)
+    print(f'{cl["b"]}-' * num1)
     print(f'{txt.center(num1)}')
-    print('-' * num1)
+    print(f'-' * num1)
+    print(f'{cl["limit"]}')
 
 
 tiposAtendimentos = ['Apoio aos eventos municipais', 'Apoio as secretarias',
@@ -25,7 +25,7 @@ tiposAtendimentos = ['Apoio aos eventos municipais', 'Apoio as secretarias',
  'Averiguação de consumo de entorpecente em logradouros públicos',
 'Abordagem por atitude suspeita', 'Intervenção para prevenção de ato infracional', 'Intervenção/Orientação sócio-educativa',
 'Apoio a sociedade civil organizada', 'Intervenção no ambito escolar',
- 'Prestação de socorro', 'Transporte de doversos em VTR',
+ 'Prestação de socorro', 'Transporte de diversos em VTR',
  'Apoio à ocorrência de trânsito',
 'Intensificação de Ronda/Averiguação', 'Atendimento social a população de rua',
  'Atendimento ao idoso', 'Documentos e/ou objetos achados',

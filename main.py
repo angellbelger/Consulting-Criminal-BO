@@ -12,7 +12,7 @@ option = 0
 
 okMain = True
 while okMain:
-    titleFor('BO', 10)
+    titleFor('BO', 30)
     for c in range(0, len(menu)):
         print(f'{cl["b"]}{c + 1}{cl["limit"]} - {menu[c]}')
     
@@ -22,9 +22,23 @@ while okMain:
     # reading data base
 
     if option == 1:
-        titleFor('Data Base')
-        print(dataBase)
-        line(27)
+
+        ok = True
+        while ok:
+            titleFor('Data Base', 30)
+            if len(dataBase) == 0:
+                print('It is empty.')
+                ok = False
+            else:
+                for c in range(0, len(dataBase)):
+                    print(f'{cl["b"]}{c}{cl["limit"]} - {dataBase[c]["name"]}')
+
+                while True:
+                    option = readint('See people: ')
+
+                    if option >= 0 or option < (len(dataBase)):
+                        print('')
+
 
     # add people
 
@@ -77,7 +91,7 @@ while okMain:
         people["trigger"] = str(input('Acionamento por: ')).title().strip()
 
         tip = 0
-        print('\nTipo de Atendimento\n')
+        titleFor('Tipos de Atendimento', 30)
         ok = True
         while ok:
 
