@@ -1,4 +1,5 @@
 import datetime
+from os import name
 from utl.lay import colour as cl
 from utl.aqv import readint, titleFor, tiposAtendimentos, line
 
@@ -35,9 +36,11 @@ while okMain:
 
                 while True:
                     option = readint('See people: ')
+                    line(30)
 
                     if option >= 0 or option < (len(dataBase)):
-                        print('')
+                        for c in range(0, len(dataBase)):
+                            print(f'Name: {dataBase[option]["name"]} Date: {dataBase[option][dateBO]}')
 
 
     # add people
