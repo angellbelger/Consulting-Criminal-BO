@@ -97,7 +97,6 @@ while okMain:
         titleFor('Tipos de Atendimento', 30)
         ok = True
         while ok:
-
             for c in range(0, len(tiposAtendimentos)):
                 print(f'{c} - {tiposAtendimentos[c]}\n')
 
