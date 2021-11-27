@@ -101,7 +101,6 @@ while okMain:
                 print(f'{c} - {tiposAtendimentos[c]}\n')
 
             tip = readint('Tipo de Atendimento: ')
-
             people["type"] = tiposAtendimentos[tip]
             ok = False
         dataBase.append(people.copy())
