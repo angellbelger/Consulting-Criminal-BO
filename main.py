@@ -20,7 +20,7 @@ while okMain:
     option = 0
     option = int(input(f'{cl["b"]}\nOption:{cl["limit"]} '))
 
-    # reading data base
+    # reading database
 
     if option == 1:
 
@@ -115,4 +115,3 @@ while okMain:
     
     else:
         print('Please, type a valid command.')
-
