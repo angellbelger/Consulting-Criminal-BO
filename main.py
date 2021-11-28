@@ -108,7 +108,7 @@ while okMain:
     # search people by people
     
     elif option == 3:
-        print('Loading')
+        print('Loading...')
 
     elif option == 4:
         break
