@@ -3,7 +3,7 @@ from os import name
 from utl.lay import colour as cl
 from utl.aqv import readint, titleFor, tiposAtendimentos, line
 
-print('\nHello, World.\n')
+print('\n\033[35mHello, World.\033[m\n')
 
 dataBase = list()
 people = dict()
