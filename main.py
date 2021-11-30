@@ -38,10 +38,9 @@ while okMain:
                     option = readint('See people: ')
                     line(30)
 
-                    if option >= 0 or option < (len(dataBase)):
-                        for c in range(0, len(dataBase)):
-                            print(f'Name: {dataBase[option]["name"]} Date: {dataBase[option][dateBO]}')
-
+                    print(f'{dataBase[option]["name"]}')
+                    print(dataBase)
+                    break
 
     # add people
 
