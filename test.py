@@ -1,11 +1,9 @@
 import datetime
 
-x = datetime.datetime.now()
+dicta = {'um': 2, 'dois': 3}
+dictb = dict()
 
-print(x.day)
-y = int(input('Number: '))
+dictb["number"] = dicta
 
-if x.day == y:
-    print('True')
-else:
-    print('False')
+print(dictb)
+print(dictb["number"])
