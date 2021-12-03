@@ -8,4 +8,4 @@ dictb = dict()
 dictb["number"] = dicta
 
 print(dictb)
-print(dictb["number"])
+print(dictb["number"]["um"])
