@@ -37,7 +37,7 @@ while okMain:
                 while True:
                     option = readint('See people: ')
                     line(30)
-
+                    print(f'{dataBase[option]["date"]["dateDay"]}/{dataBase[option]["date"]["dateMonth"]}/{dataBase[option]["date"]["dateYear"]}')
                     print(f'{dataBase[option]["name"]}')
                     print(dataBase)
                     break
