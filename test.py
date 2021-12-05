@@ -1,11 +1,16 @@
-import datetime
+#import datetime
 
 #test
 
-dicta = {'um': 2, 'dois': 3}
-dictb = dict()
+#dicta = {'um': 2, 'dois': 3}
+#dictb = dict()
 
-dictb["number"] = dicta
+#dictb["number"] = dicta
 
-print(dictb)
-print(dictb["number"]["um"])
+#print(dictb)
+#print(dictb["number"]["um"])
+
+dictionary = []
+frase = str(input('Historico: '))
+frase.split('.')
+print(frase)

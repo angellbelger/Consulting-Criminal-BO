@@ -37,8 +37,9 @@ while okMain:
                 while True:
                     option = readint('See people: ')
                     line(30)
-                    print(f'{dataBase[option]["date"]["dateDay"]}/{dataBase[option]["date"]["dateMonth"]}/{dataBase[option]["date"]["dateYear"]}')
-                    print(f'{dataBase[option]["name"]}')
+                    print(f'{dataBase[option]["date"]["dateDay"]}/{dataBase[option]["date"]["dateMonth"]}/{dataBase[option]["date"]["dateYear"]} - Time: {dataBase["time"]}')
+                    print(f'Infrator: {dataBase[option]["name"]}')
+
                     print(dataBase)
                     break
 
@@ -102,6 +103,11 @@ while okMain:
             tip = readint('Tipo de Atendimento: ')
             people["type"] = tiposAtendimentos[tip]
             ok = False
+        
+        phrase = str(input('History: ')).strip()
+        
+        for c in range(0, len(phrase)):
+
         dataBase.append(people.copy())
     
     # search people by people
@@ -109,10 +115,14 @@ while okMain:
     elif option == 3:
         print('Loading...')
 
+    # metadata
+
     elif option == 4:
+        print(dataBase)
+
+    elif option == 5:
         break
     
     else:
         print('Please, type a valid command.')
 
-        #testing
