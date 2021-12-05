@@ -8,7 +8,7 @@ print('\n\033[35mHello, World.\033[m\n')
 dataBase = list()
 people = dict()
 dateBO = dict()
-menu = ['Data Base', 'Add People', 'Search by keyword', 'Exit']
+menu = ['Data Base', 'Add People', 'Search by keyword', 'Metadata','Exit']
 option = 0
 
 okMain = True
@@ -32,16 +32,21 @@ while okMain:
                 ok = False
             else:
                 for c in range(0, len(dataBase)):
-                    print(f'{cl["b"]}{c}{cl["limit"]} - {dataBase[c]["name"]}')
-
-                while True:
+                    print(f'{cl["b"]}{c}{cl["limit"]} - {dataBase[c]["offender"]}')
+                
+                ok = True
+                while ok:
                     option = readint('See people: ')
-                    line(30)
-                    print(f'{dataBase[option]["date"]["dateDay"]}/{dataBase[option]["date"]["dateMonth"]}/{dataBase[option]["date"]["dateYear"]} - Time: {dataBase["time"]}')
-                    print(f'Infrator: {dataBase[option]["name"]}')
-
+                    titleFor('Data')
+                    print(f'\033[35m{dataBase[option]["date"]["dateDay"]}/{dataBase[option]["date"]["dateMonth"]}/{dataBase[option]["date"]["dateYear"]}\033[m - Time: \033[35m{dataBase[option]["time"]}\033[m')
+                    print(f'Infrator:{cl["p"]} {dataBase[option]["offender"]}{cl["limit"]}')
+                    print(f'Endereco/local:{cl["p"]} {dataBase[option]["adress"]}{cl["limit"]}')
+                    print(f'Ponto de Referência:{cl["p"]} {dataBase[option]["reference"]}{cl["limit"]}')
+                    print(f'POLICE:{cl["p"]} {dataBase[option]["police"]}{cl["limit"]}')
+                    print(f'Acionamento por:{cl["p"]} {dataBase[option]["trigger"]}{cl["limit"]}')
+                    print(f'Tipo de Atendimento:{cl["p"]} {dataBase[option]["type"]}{cl["limit"]}')
                     print(dataBase)
-                    break
+                    ok = False
 
     # add people
 
@@ -86,11 +91,11 @@ while okMain:
 
         print(dateBO)
         people["date"] = dateBO
-        people["name"] = str(input('Nome: ')).strip().title()
-        people["reference"] = str(input('Referência: ')).title()
+        people["offender"] = str(input('Infrator: ')).strip().title()
+        people["reference"] = str(input('Ponto de Referência: ')).title()
         people["adress"] = str(input('Endereço: ' )).strip()
         people["time"] = str(input('Horário: ')).strip()
-        people["gcm"] = str(input('GCM: ')).strip().title()
+        people["police"] = str(input('POLICE: ')).strip().title()
         people["trigger"] = str(input('Acionamento por: ')).title().strip()
 
         tip = 0
@@ -103,10 +108,6 @@ while okMain:
             tip = readint('Tipo de Atendimento: ')
             people["type"] = tiposAtendimentos[tip]
             ok = False
-        
-        phrase = str(input('History: ')).strip()
-        
-        for c in range(0, len(phrase)):
 
         dataBase.append(people.copy())
     
@@ -118,7 +119,10 @@ while okMain:
     # metadata
 
     elif option == 4:
-        print(dataBase)
+        if len(dataBase) == 0:
+            print('Empty')
+        else:
+            print(dataBase)
 
     elif option == 5:
         break
