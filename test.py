@@ -1,16 +1,15 @@
-#import datetime
+import datetime
 
-#test05
 
-#dicta = {'um': 2, 'dois': 3}
-#dictb = dict()
+pessoas = dict()
+individuo = dict()
 
-#dictb["number"] = dicta
 
-#print(dictb)
-#print(dictb["number"]["um"])
+while True:
+    individuo["name"] = str(input('nome: '))
+    individuo["age"] = int(input('age: '))
+    pessoas["individuo"] = individuo
+    print(pessoas)
+    #for c in range(0, len(pessoas)):
+     #   print(f'{c} - {pessoas[c]["name"] - pessoas[c]["age"]}')
 
-dictionary = []
-frase = str(input('Historico: '))
-frase.split('.')
-print(frase)

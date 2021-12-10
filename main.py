@@ -90,7 +90,7 @@ while okMain:
                     ok = False
 
         print(dateBO)
-        people["date"] = dateBO
+        people["date"] = dateBO.copy()
         people["offender"] = str(input('Infrator: ')).strip().title()
         people["reference"] = str(input('Ponto de Referência: ')).title()
         people["adress"] = str(input('Endereço: ' )).strip()
@@ -98,14 +98,17 @@ while okMain:
         people["police"] = str(input('POLICE: ')).strip().title()
         people["trigger"] = str(input('Acionamento por: ')).title().strip()
 
-        tip = 0
+        tip = -1
         titleFor('Tipos de Atendimento', 30)
         ok = True
         while ok:
             for c in range(0, len(tiposAtendimentos)):
                 print(f'{c} - {tiposAtendimentos[c]}\n')
-
-            tip = readint('Tipo de Atendimento: ')
+            
+            while tip < 0 or tip > 17:
+                tip = readint('Tipo de Atendimento: ')
+                if tip < 0 or tip > 17:
+                    print(f'{cl["r"]}Please, type a value command.{cl["limit"]}')
             people["type"] = tiposAtendimentos[tip]
             ok = False
 
