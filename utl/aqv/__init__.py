@@ -25,7 +25,7 @@ def boolTitle(txt):
     bool = ''
     while True:
         x = str(input(txt)).title().strip()
-        bool = str(input(f'It is correct: {x}[{cl["b"]}Y{cl["limit"]} | {cl["r"]}N{cl["limit"]} ]'))[0].title()
+        bool = str(input(f'It is correct: {x} \n[ {cl["b"]}Y{cl["limit"]} | {cl["r"]}N{cl["limit"]} ]'))[0].title()
 
         if bool == 'N':
             continue
@@ -38,7 +38,7 @@ def bool(txt):
     bool = ''
     while True:
         x = str(input(txt)).strip()
-        bool = str(input((f'It is correct: {x}\N[ {cl["b"]}Y{cl["limit"]} | {cl["r"]}N{cl["limit"]} ]')))[0].title()
+        bool = str(input(f'It is correct: {x} \n[ {cl["b"]}Y{cl["limit"]} | {cl["r"]}N{cl["limit"]} ]'))[0].title()
 
         if bool == 'N':
             continue
