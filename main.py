@@ -92,11 +92,11 @@ while okMain:
         print(dateBO)
         people["date"] = dateBO.copy()
         people["offender"] = boolTitle('Infrator: ')
-        people["reference"] = str(input('Ponto de Referência: ')).title()
-        people["adress"] = str(input('Endereço: ' )).strip()
-        people["time"] = str(input('Horário: ')).strip()
-        people["police"] = str(input('POLICE: ')).strip().title()
-        people["trigger"] = str(input('Acionamento por: ')).title().strip()
+        people["reference"] = bool('Ponto de Referência: ')
+        people["adress"] = bool('Endereço: ' )
+        people["time"] = bool('Horário: ')
+        people["police"] = boolTitle('POLICE: ')
+        people["trigger"] = boolTitle('Acionamento por: ')
 
         tip = -1
         titleFor('Tipos de Atendimento', 30)
