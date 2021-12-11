@@ -1,7 +1,7 @@
 import datetime
 from os import name
 from utl.lay import colour as cl
-from utl.aqv import readint, titleFor, tiposAtendimentos, bool
+from utl.aqv import readint, titleFor, tiposAtendimentos, boolTitle, bool
 
 print('\n\033[35mHello, World.\033[m\n')
 
@@ -91,7 +91,7 @@ while okMain:
 
         print(dateBO)
         people["date"] = dateBO.copy()
-        people["offender"] = 
+        people["offender"] = boolTitle('Infrator: ')
         people["reference"] = str(input('Ponto de Referência: ')).title()
         people["adress"] = str(input('Endereço: ' )).strip()
         people["time"] = str(input('Horário: ')).strip()

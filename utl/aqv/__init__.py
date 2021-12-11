@@ -20,11 +20,24 @@ def titleFor(txt, num1=0):
     print(f'{cl["limit"]}')
 
 
-def bool(txt):
+def boolTitle(txt):
     x = ''
     bool = ''
     while True:
         x = str(input(txt)).title().strip()
+        bool = str(input(f'It is correct: {x}[{cl["b"]}Y{cl["limit"]} | {cl["r"]}N{cl["limit"]} ]'))[0].title()
+
+        if bool == 'N':
+            continue
+        else:
+            return x
+
+
+def bool(txt):
+    x = ''
+    bool = ''
+    while True:
+        x = str(input(txt)).strip()
         bool = str(input((f'It is correct: {x}\N[ {cl["b"]}Y{cl["limit"]} | {cl["r"]}N{cl["limit"]} ]')))[0].title()
 
         if bool == 'N':
