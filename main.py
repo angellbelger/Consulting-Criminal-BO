@@ -89,7 +89,6 @@ while okMain:
                 else:
                     ok = False
 
-        print(dateBO)
         people["date"] = dateBO.copy()
         people["offender"] = boolTitle('Infrator: ')
         people["reference"] = bool('Ponto de Referência: ')
