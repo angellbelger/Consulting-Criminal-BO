@@ -32,10 +32,30 @@ def boolTitle(txt):
 
         elif bool not in 'NY':
             print(f'{cl["r"]}Please, type a valid command.{cl["limit"]}')
-            
+
         else:
             return x
 
+
+def boolNumber(txt):
+    while True:
+        try:
+            x = int(input(txt))
+        except:
+            print(f'{cl["r"]}Please, type valid command.{cl["limit"]}')
+            continue
+        else:
+            bool = ''
+            bool = str(input(f'It is correct: {cl["p"]}"{x}"{cl["limit"]} \nYour answer [ {cl["b"]}Y{cl["limit"]} | {cl["r"]}N{cl["limit"]} ]: '))[0].title()
+
+            if bool not in 'NY':
+                print(f'{cl["r"]}Please, type a valid command.{cl["limit"]}')
+            
+            elif bool == 'N':
+                continue
+                
+            else:
+                return x
 
 def bool(txt):
     x = ''

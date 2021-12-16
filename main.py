@@ -1,7 +1,7 @@
 import datetime
 from os import name
 from utl.lay import colour as cl
-from utl.aqv import readint, titleFor, tiposAtendimentos, boolTitle, bool
+from utl.aqv import readint, titleFor, tiposAtendimentos, boolTitle, bool, boolNumber
 
 print('\n\033[35mHello, World.\033[m\n')
 
@@ -27,9 +27,11 @@ while okMain:
         ok = True
         while ok:
             titleFor('Data Base', 30)
+
             if len(dataBase) == 0:
                 print('It is empty.')
                 ok = False
+                
             else:
                 for c in range(0, len(dataBase)):
                     print(f'{cl["b"]}{c}{cl["limit"]} - {dataBase[c]["offender"]}')
@@ -63,7 +65,8 @@ while okMain:
         else:
             ok = True
             while ok:
-                dateBO["dateDay"] = readint('Day: ')
+                dateBO["dateDay"] = boolNumber('Day: ')
+
                 if dateBO["dateDay"] < 1 or dateBO["dateDay"] > 31:
                     print(f'{cl["r"]}Please, type a valid day.{cl["limit"]}')
                     continue
@@ -73,6 +76,7 @@ while okMain:
             ok = True
             while ok:
                 dateBO["dateMonth"] = readint('Month: ')
+
                 if dateBO["dateMonth"] < 1 or dateBO["dateMonth"] > 12:
                     print(f'{cl["r"]}Please, type a valid month.{cl["limit"]}')
                     continue
@@ -82,6 +86,7 @@ while okMain:
             ok = True
             while ok:
                 dateBO["dateYear"] = readint('Year: ')
+
                 if dateBO["dateYear"] < 2000 or dateBO["dateYear"] > date.year:
                     print(f'{cl["r"]}Please, type a valid year.{cl["limit"]}')
                     continue
@@ -105,20 +110,20 @@ while okMain:
                 print(f'{cl["b"]}{c}{cl["limit"]} - {tiposAtendimentos[c]}\n')
             
             ok = True
-            
             while ok:
                 choose = readint('Tipo de Atendimento: ')
 
-                if choose >= 0 or choose < 17:
+                if choose >= 0 and choose <= 16:
                     people["type"] = tiposAtendimentos[choose]
+                    ok = False
 
                 elif choose == 17:
                     people["type"] = str(input('Description: '))
+                    ok = False
 
                 elif choose < 0 or choose > 17:
                     print(f'{cl["r"]}Please, type a value command.{cl["limit"]}')
-                
-            ok = False
+                    continue
 
         dataBase.append(people.copy())
     
@@ -132,6 +137,7 @@ while okMain:
     elif option == 4:
         if len(dataBase) == 0:
             print('Empty')
+
         else:
             print(dataBase)
 
