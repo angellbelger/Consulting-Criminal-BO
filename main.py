@@ -90,25 +90,34 @@ while okMain:
                     ok = False
 
         people["date"] = dateBO.copy()
-        people["offender"] = boolTitle('Infrator: ')
-        people["reference"] = bool('Ponto de Referência: ')
-        people["adress"] = bool('Endereço: ' )
-        people["time"] = bool('Horário: ')
-        people["police"] = boolTitle('POLICE: ')
-        people["trigger"] = boolTitle('Acionamento por: ')
+        people["offender"] = boolTitle('\nInfrator: ')
+        people["reference"] = bool('\nPonto de Referência: ')
+        people["adress"] = bool('\nEndereço: ' )
+        people["time"] = bool('\nHorário: ')
+        people["police"] = boolTitle('\nPOLICE: ')
+        people["trigger"] = boolTitle('\nAcionamento por: ')
 
-        tip = -1
+        choose = -1
         titleFor('Tipos de Atendimento', 30)
         ok = True
         while ok:
             for c in range(0, len(tiposAtendimentos)):
-                print(f'{c} - {tiposAtendimentos[c]}\n')
+                print(f'{cl["b"]}{c}{cl["limit"]} - {tiposAtendimentos[c]}\n')
             
-            while tip < 0 or tip > 17:
-                tip = readint('Tipo de Atendimento: ')
-                if tip < 0 or tip > 17:
+            ok = True
+            
+            while ok:
+                choose = readint('Tipo de Atendimento: ')
+
+                if choose >= 0 or choose < 17:
+                    people["type"] = tiposAtendimentos[choose]
+
+                elif choose == 17:
+                    people["type"] = str(input('Description: '))
+
+                elif choose < 0 or choose > 17:
                     print(f'{cl["r"]}Please, type a value command.{cl["limit"]}')
-            people["type"] = tiposAtendimentos[tip]
+                
             ok = False
 
         dataBase.append(people.copy())

@@ -29,6 +29,10 @@ def boolTitle(txt):
 
         if bool == 'N':
             continue
+
+        elif bool not in 'NY':
+            print(f'{cl["r"]}Please, type a valid command.{cl["limit"]}')
+            
         else:
             return x
 
@@ -42,6 +46,10 @@ def bool(txt):
 
         if bool == 'N':
             continue
+
+        elif bool not in 'NY':
+            print(f'{cl["r"]}Please, type a valid command.{cl["limit"]}')
+
         else:
             return x
 
