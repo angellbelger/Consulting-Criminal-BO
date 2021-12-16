@@ -39,7 +39,7 @@ while okMain:
                 ok = True
                 while ok:
                     option = readint('See people: ')
-                    titleFor('Data')
+                    titleFor('Data', 50)
                     print(f'\033[35m{dataBase[option]["date"]["dateDay"]}/{dataBase[option]["date"]["dateMonth"]}/{dataBase[option]["date"]["dateYear"]}\033[m - Time: \033[35m{dataBase[option]["time"]}\033[m')
                     print(f'Infrator:{cl["p"]} {dataBase[option]["offender"]}{cl["limit"]}')
                     print(f'Endereco/local:{cl["p"]} {dataBase[option]["adress"]}{cl["limit"]}')
@@ -129,7 +129,34 @@ while okMain:
     # search people by people
     
     elif option == 3:
-        print('Loading...')
+
+        ok = True
+        while ok:
+
+            titleFor('Keyword', 30)
+
+            listKeyword = ['Date', 'Offender', 'POLICE', 'Back']
+
+            for c in range(0, len(listKeyword)):
+                print(f'{c + 1} - {listKeyword[c]}')
+            
+            option = 0
+            option = readint(f'{cl["b"]}\nOption:{cl["limit"]} ')
+
+            if option == 1:
+                print('Loading')
+            
+            elif option == 2:
+                print('Loading')
+            
+            elif option == 3:
+                print('Loading')
+
+            elif option == 4:
+                ok = False
+            
+            else:
+                print(f'{cl["r"]}Please, type a valid command.{cl["limit"]}')
 
     # metadata
 
