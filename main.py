@@ -31,7 +31,7 @@ while okMain:
             if len(dataBase) == 0:
                 print('It is empty.')
                 ok = False
-                
+
             else:
                 for c in range(0, len(dataBase)):
                     print(f'{cl["b"]}{c}{cl["limit"]} - {dataBase[c]["offender"]}')
@@ -47,7 +47,6 @@ while okMain:
                     print(f'POLICE:{cl["p"]} {dataBase[option]["police"]}{cl["limit"]}')
                     print(f'Acionamento por:{cl["p"]} {dataBase[option]["trigger"]}{cl["limit"]}')
                     print(f'Tipo de Atendimento:{cl["p"]} {dataBase[option]["type"]}{cl["limit"]}')
-                    print(dataBase)
                     ok = False
 
     # add people
@@ -75,7 +74,7 @@ while okMain:
             
             ok = True
             while ok:
-                dateBO["dateMonth"] = readint('Month: ')
+                dateBO["dateMonth"] = boolNumber('Month: ')
 
                 if dateBO["dateMonth"] < 1 or dateBO["dateMonth"] > 12:
                     print(f'{cl["r"]}Please, type a valid month.{cl["limit"]}')
@@ -85,7 +84,7 @@ while okMain:
             
             ok = True
             while ok:
-                dateBO["dateYear"] = readint('Year: ')
+                dateBO["dateYear"] = boolNumber('Year: ')
 
                 if dateBO["dateYear"] < 2000 or dateBO["dateYear"] > date.year:
                     print(f'{cl["r"]}Please, type a valid year.{cl["limit"]}')
