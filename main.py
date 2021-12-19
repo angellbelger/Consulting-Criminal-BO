@@ -150,12 +150,12 @@ while okMain:
                 dateRAM["dateYear"] = readint('Year: ')
 
                 for c in range(0, len(dataBase)):
-                    if dateRAM == dataBase[c][date]:
+                    if dateRAM == dataBase[c]["date"]:
                         print(f'{dataBase[c]}')
                         print('Win')
-                        ok = False
                     else:
                         print('Sorry, I cant do it.')
+            
 
             
             elif option == 2:

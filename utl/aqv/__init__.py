@@ -24,17 +24,41 @@ def boolTitle(txt):
     x = ''
     bool = ''
     while True:
-        x = str(input(txt)).title().strip()
-        bool = str(input(f'It is correct: {cl["p"]}"{x}"{cl["limit"]} \nYour answer [ {cl["b"]}Y{cl["limit"]} | {cl["r"]}N{cl["limit"]} ]: '))[0].title()
+        try:
+            x = str(input(txt)).title().strip()
+            bool = str(input(f'It is correct: {cl["p"]}"{x}"{cl["limit"]} \nYour answer [ {cl["b"]}Y{cl["limit"]} | {cl["r"]}N{cl["limit"]} ]: '))[0].title()
 
-        if bool == 'N':
-            continue
+            if bool == 'N':
+                continue
 
-        elif bool not in 'NY':
-            print(f'{cl["r"]}Please, type a valid command.{cl["limit"]}')
+            elif bool not in 'NY':
+                print(f'{cl["r"]}Please, type a valid command.{cl["limit"]}')
 
-        else:
-            return x
+            else:
+                return x
+        
+        except:
+            print(f'{cl["r"]}Try again{cl["limit"]}')
+
+
+def bool(txt):
+    x = ''
+    bool = ''
+    while True:
+        try:
+            x = str(input(txt)).strip()
+            bool = str(input(f'It is correct: {cl["p"]}"{x}"{cl["limit"]} \nYour answer [ {cl["b"]}Y{cl["limit"]} | {cl["r"]}N{cl["limit"]} ]: '))[0].title()
+
+            if bool == 'N':
+                continue
+
+            elif bool not in 'NY':
+                print(f'{cl["r"]}Please, type a valid command.{cl["limit"]}')
+
+            else:
+                return x
+        except:
+            print(f'{cl["r"]}Try again{cl["limit"]}')
 
 
 def boolNumber(txt):
@@ -56,22 +80,6 @@ def boolNumber(txt):
                 
             else:
                 return x
-
-def bool(txt):
-    x = ''
-    bool = ''
-    while True:
-        x = str(input(txt)).strip()
-        bool = str(input(f'It is correct: {cl["p"]}"{x}"{cl["limit"]} \nYour answer [ {cl["b"]}Y{cl["limit"]} | {cl["r"]}N{cl["limit"]} ]: '))[0].title()
-
-        if bool == 'N':
-            continue
-
-        elif bool not in 'NY':
-            print(f'{cl["r"]}Please, type a valid command.{cl["limit"]}')
-
-        else:
-            return x
 
 
 tiposAtendimentos = ['Apoio aos eventos municipais', 'Apoio as secretarias',
