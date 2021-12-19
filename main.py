@@ -144,7 +144,19 @@ while okMain:
             option = readint(f'{cl["b"]}\nOption:{cl["limit"]} ')
 
             if option == 1:
-                print('Loading')
+                dateRAM = {}
+                dateRAM["dateDay"] = readint('Day: ')
+                dateRAM["dateMonth"] = readint('Month: ')
+                dateRAM["dateYear"] = readint('Year: ')
+
+                for c in range(0, len(dataBase)):
+                    if dateRAM == dataBase[c][date]:
+                        print(f'{dataBase[c]}')
+                        print('Win')
+                        ok = False
+                    else:
+                        print('Sorry, I cant do it.')
+
             
             elif option == 2:
                 print('Loading')
