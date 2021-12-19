@@ -1,16 +1,19 @@
+from typing import Literal
 from utl.lay import colour as cl
 
 
 def readint(msg):
     while True:
+
         try:
             x = int(input(msg))
-        except:
-            print(f'{cl["r"]}Please, type valid command.{cl["limit"]}')
+
+        except Exception as erro:
+            print(f'{cl["r"]}{erro.__class__}. Try again.{cl["limit"]}')
             continue
+
         else:
             return x
-        break
 
 
 def titleFor(txt, num1=0):
@@ -18,6 +21,19 @@ def titleFor(txt, num1=0):
     print(f'{txt.center(num1)}')
     print(f'-' * num1)
     print(f'{cl["limit"]}')
+
+
+def onlyBool(txt):
+    x = ''
+    while True:
+        try:
+            x = str(input(txt)).title()[0]
+        
+        except Exception as erro:
+            print(f'{cl["r"]}{erro.__class__}. Try again.{cl["limit"]}')
+        
+        else:
+            return x
 
 
 def boolTitle(txt):
@@ -37,8 +53,8 @@ def boolTitle(txt):
             else:
                 return x
         
-        except:
-            print(f'{cl["r"]}Try again{cl["limit"]}')
+        except Exception as erro:
+            print(f'{cl["r"]}{erro.__class__}. Try again.{cl["limit"]}')
 
 
 def bool(txt):
@@ -57,16 +73,16 @@ def bool(txt):
 
             else:
                 return x
-        except:
-            print(f'{cl["r"]}Try again{cl["limit"]}')
+        except Exception as erro:
+            print(f'{cl["r"]}{erro.__class__}. Try again.{cl["limit"]}')
 
 
 def boolNumber(txt):
     while True:
         try:
             x = int(input(txt))
-        except:
-            print(f'{cl["r"]}Please, type valid command.{cl["limit"]}')
+        except Exception as erro:
+            print(f'{cl["r"]}{erro.__class__}. Try again.{cl["limit"]}')
             continue
         else:
             bool = ''

@@ -1,7 +1,7 @@
 import datetime
 from os import name
 from utl.lay import colour as cl
-from utl.aqv import readint, titleFor, tiposAtendimentos, boolTitle, bool, boolNumber
+from utl.aqv import onlyBool, readint, titleFor, tiposAtendimentos, boolTitle, bool, boolNumber
 
 print('\n\033[35mHello, World.\033[m\n')
 
@@ -18,7 +18,7 @@ while okMain:
         print(f'{cl["b"]}{c + 1}{cl["limit"]} - {menu[c]}')
     
     option = 0
-    option = int(input(f'{cl["b"]}\nOption:{cl["limit"]} '))
+    option = readint(f'{cl["b"]}\nOption:{cl["limit"]} ')
 
     # reading database
 
@@ -54,7 +54,7 @@ while okMain:
     elif option == 2:
         date = datetime.datetime.now()
         answer = ''
-        answer = str(input(f'It is ok? {date.day}/{date.month}/{date.year}\n[ {cl["b"]}Y{cl["limit"]} ] | [ {cl["r"]}N{cl["limit"]} ]: ')).title()[0]
+        answer = onlyBool(f'It is ok? {date.day}/{date.month}/{date.year}\n[ {cl["b"]}Y{cl["limit"]} ] | [ {cl["r"]}N{cl["limit"]} ]: ').title()[0]
         
         if answer == 'Y':
             dateBO["dateDay"] = date.day
@@ -149,12 +149,20 @@ while okMain:
                 dateRAM["dateMonth"] = readint('Month: ')
                 dateRAM["dateYear"] = readint('Year: ')
 
-                for c in range(0, len(dataBase)):
-                    if dateRAM == dataBase[c]["date"]:
-                        print(f'{dataBase[c]}')
-                        print('Win')
+                # SEARCH date by date
+
+                for index in range(0, len(dataBase)):
+                    if dateRAM == dataBase[index]["date"]:
+                        titleFor('Search by Date', 50)
+                        print(f'\033[35m{dataBase[index]["date"]["dateDay"]}/{dataBase[index]["date"]["dateMonth"]}/{dataBase[index]["date"]["dateYear"]}\033[m - Time: \033[35m{dataBase[index]["time"]}\033[m')
+                        print(f'Infrator:{cl["p"]} {dataBase[index]["offender"]}{cl["limit"]}')
+                        print(f'Endereco/local:{cl["p"]} {dataBase[index]["adress"]}{cl["limit"]}')
+                        print(f'Ponto de Referência:{cl["p"]} {dataBase[index]["reference"]}{cl["limit"]}')
+                        print(f'POLICE:{cl["p"]} {dataBase[index]["police"]}{cl["limit"]}')
+                        print(f'Acionamento por:{cl["p"]} {dataBase[index]["trigger"]}{cl["limit"]}')
+                        print(f'Tipo de Atendimento:{cl["p"]} {dataBase[index]["type"]}{cl["limit"]}')
                     else:
-                        print('Sorry, I cant do it.')
+                        print('\nNothing Found.\n')
             
 
             
