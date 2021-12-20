@@ -4,7 +4,13 @@ import datetime
 
 lst = [['find it'], 2, 3, 5]
 
-print(lst[0])
+keyWord = 'find'
+
+if keyWord in lst[0][0]:
+    print('True')
+
+else:
+    print('false')
 
 
 

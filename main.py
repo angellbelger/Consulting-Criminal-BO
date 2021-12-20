@@ -149,16 +149,15 @@ while okMain:
             option = 0
             option = readint(f'{cl["b"]}\nOption:{cl["limit"]} ')
 
+            # SEARCH date by date
             if option == 1:
                 dateRAM = {}
                 dateRAM["dateDay"] = readint('Day: ')
                 dateRAM["dateMonth"] = readint('Month: ')
                 dateRAM["dateYear"] = readint('Year: ')
 
-                # SEARCH date by date
-
+                counter = 0
                 for index in range(0, len(dataBase)):
-                    counter = 0
                     if dateRAM == dataBase[index]["date"]:
                         counter += 1
                         titleFor('Search by Date', 50)
@@ -170,11 +169,30 @@ while okMain:
                         print(f'Acionamento por:{cl["p"]} {dataBase[index]["trigger"]}{cl["limit"]}')
                         print(f'Tipo de Atendimento:{cl["p"]} {dataBase[index]["type"]}{cl["limit"]}')
                     
-                    if counter == 0:
-                        print('\nNothing Found.\n')
+                if counter == 0:
+                    print('\nNothing Found.\n')
             
+            # SEARCH offender by offender
             elif option == 2:
-                print('Loading')
+
+                offenderRAM = ''
+                offenderRAM = boolTitle('Offender: ')
+
+                counter = 0
+                for index in range(0, len(dataBase)):
+                    if offenderRAM in dataBase[index]["offender"]:
+                        counter += 1
+                        titleFor('Search by Offender', 50)
+                        print(f'\033[35m{dataBase[index]["date"]["dateDay"]}/{dataBase[index]["date"]["dateMonth"]}/{dataBase[index]["date"]["dateYear"]}\033[m - Time: \033[35m{dataBase[index]["time"]}\033[m')
+                        print(f'Infrator:{cl["p"]} {dataBase[index]["offender"]}{cl["limit"]}')
+                        print(f'Endereco/local:{cl["p"]} {dataBase[index]["adress"]}{cl["limit"]}')
+                        print(f'Ponto de Referência:{cl["p"]} {dataBase[index]["reference"]}{cl["limit"]}')
+                        print(f'POLICE:{cl["p"]} {dataBase[index]["police"]}{cl["limit"]}')
+                        print(f'Acionamento por:{cl["p"]} {dataBase[index]["trigger"]}{cl["limit"]}')
+                        print(f'Tipo de Atendimento:{cl["p"]} {dataBase[index]["type"]}{cl["limit"]}')
+                    
+                if counter == 0:
+                    print('\nNothing Found.\n')
             
             elif option == 3:
                 print('Loading')
