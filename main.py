@@ -26,7 +26,7 @@ while okMain:
 
         ok = True
         while ok:
-            titleFor('Data Base', 30)
+            titleFor('Database', 30)
 
             if len(dataBase) == 0:
                 print('It is empty.')
@@ -38,16 +38,22 @@ while okMain:
                 
                 ok = True
                 while ok:
-                    option = readint('See people: ')
-                    titleFor('Data', 50)
-                    print(f'\033[35m{dataBase[option]["date"]["dateDay"]}/{dataBase[option]["date"]["dateMonth"]}/{dataBase[option]["date"]["dateYear"]}\033[m - Time: \033[35m{dataBase[option]["time"]}\033[m')
-                    print(f'Infrator:{cl["p"]} {dataBase[option]["offender"]}{cl["limit"]}')
-                    print(f'Endereco/local:{cl["p"]} {dataBase[option]["adress"]}{cl["limit"]}')
-                    print(f'Ponto de Referência:{cl["p"]} {dataBase[option]["reference"]}{cl["limit"]}')
-                    print(f'POLICE:{cl["p"]} {dataBase[option]["police"]}{cl["limit"]}')
-                    print(f'Acionamento por:{cl["p"]} {dataBase[option]["trigger"]}{cl["limit"]}')
-                    print(f'Tipo de Atendimento:{cl["p"]} {dataBase[option]["type"]}{cl["limit"]}')
-                    ok = False
+                    try:
+                        option = readint('See people: ')
+                        titleFor('Data', 50)
+                        print(f'\033[35m{dataBase[option]["date"]["dateDay"]}/{dataBase[option]["date"]["dateMonth"]}/{dataBase[option]["date"]["dateYear"]}\033[m - Time: \033[35m{dataBase[option]["time"]}\033[m')
+                        print(f'Infrator:{cl["p"]} {dataBase[option]["offender"]}{cl["limit"]}')
+                        print(f'Endereco/local:{cl["p"]} {dataBase[option]["adress"]}{cl["limit"]}')
+                        print(f'Ponto de Referência:{cl["p"]} {dataBase[option]["reference"]}{cl["limit"]}')
+                        print(f'POLICE:{cl["p"]} {dataBase[option]["police"]}{cl["limit"]}')
+                        print(f'Acionamento por:{cl["p"]} {dataBase[option]["trigger"]}{cl["limit"]}')
+                        print(f'Tipo de Atendimento:{cl["p"]} {dataBase[option]["type"]}{cl["limit"]}')
+                    
+                    except Exception as error:
+                        print(f'{cl["r"]}{error.__class__}. Try again.{cl["limit"]}')
+                    
+                    finally:
+                        ok = False
 
     # add people
 
@@ -152,7 +158,9 @@ while okMain:
                 # SEARCH date by date
 
                 for index in range(0, len(dataBase)):
+                    counter = 0
                     if dateRAM == dataBase[index]["date"]:
+                        counter += 1
                         titleFor('Search by Date', 50)
                         print(f'\033[35m{dataBase[index]["date"]["dateDay"]}/{dataBase[index]["date"]["dateMonth"]}/{dataBase[index]["date"]["dateYear"]}\033[m - Time: \033[35m{dataBase[index]["time"]}\033[m')
                         print(f'Infrator:{cl["p"]} {dataBase[index]["offender"]}{cl["limit"]}')
@@ -161,10 +169,9 @@ while okMain:
                         print(f'POLICE:{cl["p"]} {dataBase[index]["police"]}{cl["limit"]}')
                         print(f'Acionamento por:{cl["p"]} {dataBase[index]["trigger"]}{cl["limit"]}')
                         print(f'Tipo de Atendimento:{cl["p"]} {dataBase[index]["type"]}{cl["limit"]}')
-                    else:
+                    
+                    if counter == 0:
                         print('\nNothing Found.\n')
-            
-
             
             elif option == 2:
                 print('Loading')

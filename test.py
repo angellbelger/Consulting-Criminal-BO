@@ -2,16 +2,15 @@ import datetime
 
 # test 09
 
-dict1 = {'day': 1, 'month': 1}
-dict2 = {}
+x = 3
 
-dict2["day"] = int(input('number: '))
-dict2["month"] = int(input('number: '))
+lst = [1, 2, 3, 4, 5]
 
-if dict1 == dict2:
-    print('Ok.')
-else:
-    print('False.')
+for c in range(0, len(lst)):
+    if x == lst[c]:
+        print(f'{x} and {lst[c]}')
+    else:
+        print(':(')
 
 
 

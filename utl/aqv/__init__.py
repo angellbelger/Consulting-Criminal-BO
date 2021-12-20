@@ -8,8 +8,8 @@ def readint(msg):
         try:
             x = int(input(msg))
 
-        except Exception as erro:
-            print(f'{cl["r"]}{erro.__class__}. Try again.{cl["limit"]}')
+        except Exception as error:
+            print(f'{cl["r"]}{error.__class__}. Try again.{cl["limit"]}')
             continue
 
         else:
@@ -29,8 +29,8 @@ def onlyBool(txt):
         try:
             x = str(input(txt)).title()[0]
         
-        except Exception as erro:
-            print(f'{cl["r"]}{erro.__class__}. Try again.{cl["limit"]}')
+        except Exception as error:
+            print(f'{cl["r"]}{error.__class__}. Try again.{cl["limit"]}')
         
         else:
             return x
@@ -53,8 +53,8 @@ def boolTitle(txt):
             else:
                 return x
         
-        except Exception as erro:
-            print(f'{cl["r"]}{erro.__class__}. Try again.{cl["limit"]}')
+        except Exception as error:
+            print(f'{cl["r"]}{error.__class__}. Try again.{cl["limit"]}')
 
 
 def bool(txt):
@@ -73,16 +73,16 @@ def bool(txt):
 
             else:
                 return x
-        except Exception as erro:
-            print(f'{cl["r"]}{erro.__class__}. Try again.{cl["limit"]}')
+        except Exception as error:
+            print(f'{cl["r"]}{error.__class__}. Try again.{cl["limit"]}')
 
 
 def boolNumber(txt):
     while True:
         try:
             x = int(input(txt))
-        except Exception as erro:
-            print(f'{cl["r"]}{erro.__class__}. Try again.{cl["limit"]}')
+        except Exception as error:
+            print(f'{cl["r"]}{error.__class__}. Try again.{cl["limit"]}')
             continue
         else:
             bool = ''
