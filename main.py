@@ -194,8 +194,24 @@ while okMain:
                 if counter == 0:
                     print('\nNothing Found.\n')
             
+            # SEARCH POLICE by POLICE
             elif option == 3:
-                print('Loading')
+
+                policeRAM = ''
+                policeRAM = boolTitle('POLICE: ')
+
+                counter = 0
+                for index in range(0, len(dataBase)):
+                    if policeRAM in dataBase[index]["police"]:
+                        counter += 1
+                        titleFor('Search by POLICE', 50)
+                        print(f'\033[35m{dataBase[index]["date"]["dateDay"]}/{dataBase[index]["date"]["dateMonth"]}/{dataBase[index]["date"]["dateYear"]}\033[m - Time: \033[35m{dataBase[index]["time"]}\033[m')
+                        print(f'Infrator:{cl["p"]} {dataBase[index]["offender"]}{cl["limit"]}')
+                        print(f'Endereco/local:{cl["p"]} {dataBase[index]["adress"]}{cl["limit"]}')
+                        print(f'Ponto de Referência:{cl["p"]} {dataBase[index]["reference"]}{cl["limit"]}')
+                        print(f'POLICE:{cl["p"]} {dataBase[index]["police"]}{cl["limit"]}')
+                        print(f'Acionamento por:{cl["p"]} {dataBase[index]["trigger"]}{cl["limit"]}')
+                        print(f'Tipo de Atendimento:{cl["p"]} {dataBase[index]["type"]}{cl["limit"]}')
 
             elif option == 4:
                 ok = False
