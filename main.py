@@ -21,7 +21,6 @@ while okMain:
     option = readint(f'{cl["b"]}\nOption:{cl["limit"]} ')
 
     # reading database
-
     if option == 1:
 
         ok = True
@@ -56,7 +55,6 @@ while okMain:
                         ok = False
 
     # add people
-
     elif option == 2:
         date = datetime.datetime.now()
         answer = ''
@@ -220,7 +218,6 @@ while okMain:
                 print(f'{cl["r"]}Please, type a valid command.{cl["limit"]}')
 
     # metadata
-
     elif option == 4:
         if len(dataBase) == 0:
             print('Empty')
