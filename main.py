@@ -8,7 +8,7 @@ print('\n\033[35mHello, World.\033[m\n')
 dataBase = list()
 people = dict()
 dateBO = dict()
-menu = ['Data Base', 'Add People', 'Search by keyword', 'Metadata','Exit']
+menu = ['Database', 'Add Occurrence', 'Metadata', 'Big Data','Exit']
 option = 0
 
 okMain = True
@@ -130,7 +130,7 @@ while okMain:
 
         dataBase.append(people.copy())
     
-    # search people by people
+    # search people by people METADATA
     
     elif option == 3:
 
@@ -142,7 +142,7 @@ while okMain:
             listKeyword = ['Date', 'Offender', 'POLICE', 'Back']
 
             for c in range(0, len(listKeyword)):
-                print(f'{c + 1} - {listKeyword[c]}')
+                print(f'{cl["b"]}{c + 1}{cl["limit"]} - {listKeyword[c]}')
             
             option = 0
             option = readint(f'{cl["b"]}\nOption:{cl["limit"]} ')
@@ -217,7 +217,7 @@ while okMain:
             else:
                 print(f'{cl["r"]}Please, type a valid command.{cl["limit"]}')
 
-    # metadata
+    # BIG DATA
     elif option == 4:
         if len(dataBase) == 0:
             print('Empty')
