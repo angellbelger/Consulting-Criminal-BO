@@ -1,4 +1,3 @@
-from typing import Literal
 from utl.lay import colour as cl
 
 
@@ -110,6 +109,7 @@ tiposAtendimentos = ['Apoio aos eventos municipais', 'Apoio as secretarias',
  'Atendimento ao idoso', 'Documentos e/ou objetos achados',
   'Atendimento a crianças e/ou adolescente em situação de risco',
 'Outros atendimentos (Detalhar no histórico)']
+
 
 def line(x):
     print('-' * x)
