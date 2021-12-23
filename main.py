@@ -2,13 +2,10 @@ import datetime
 from os import name
 from utl.lay import colour as cl
 from utl.aqv import onlyBool, readint, titleFor, tiposAtendimentos, boolTitle, bool, boolNumber
+from utl.objects import menu, dataBase, dateBO, people
 
 print('\n\033[35mHello, World.\033[m\n')
 
-dataBase = list()
-people = dict()
-dateBO = dict()
-menu = ['Database', 'Add Occurrence', 'Metadata', 'Big Data','Exit']
 option = 0
 
 okMain = True
@@ -230,4 +227,3 @@ while okMain:
     
     else:
         print('Please, type a valid command.')
-
