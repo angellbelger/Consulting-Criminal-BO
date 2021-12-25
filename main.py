@@ -1,8 +1,8 @@
 import datetime
 from os import name
 from utl.lay import colour as cl
-from utl.aqv import onlyBool, readint, titleFor, tiposAtendimentos, boolTitle, bool, boolNumber
-from utl.objects import menu, dataBase, dateBO, people
+from utl.aqv import onlyBool, readint, titleFor, boolTitle, bool, boolNumber
+from utl.objects import menu, dataBase, dateBO, people, typeAssistance
 
 print('\n\033[35mHello, World.\033[m\n')
 
@@ -106,15 +106,15 @@ while okMain:
         titleFor('Tipos de Atendimento', 30)
         ok = True
         while ok:
-            for c in range(0, len(tiposAtendimentos)):
-                print(f'{cl["b"]}{c}{cl["limit"]} - {tiposAtendimentos[c]}\n')
+            for c in range(0, len(typeAssistance)):
+                print(f'{cl["b"]}{c}{cl["limit"]} - {typeAssistance[c]}\n')
             
             ok = True
             while ok:
                 choose = readint('Tipo de Atendimento: ')
 
                 if choose >= 0 and choose <= 16:
-                    people["type"] = tiposAtendimentos[choose]
+                    people["type"] = typeAssistance[choose]
                     ok = False
 
                 elif choose == 17:
@@ -128,7 +128,6 @@ while okMain:
         dataBase.append(people.copy())
     
     # search people by people METADATA
-    
     elif option == 3:
 
         ok = True
