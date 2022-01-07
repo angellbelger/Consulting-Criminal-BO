@@ -1,9 +1,9 @@
-# Police Report - BO
+# Consulting Criminal - BO
 
 This software was created with the intention of helping people who want to convert their grade to the international system, feel free to give suggestions or report a problem if there is.
 ***
 ## Steps
-- [ ] Script
+- [x] Script
 - [ ] No bug
 - [ ] Interface
 ***
