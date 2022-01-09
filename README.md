@@ -3,9 +3,10 @@
 software developed to create criminal histories, and establish a database for queries.
 ***
 ## Steps
-- [ ] Script
-- [ ] No bug
+- [X] Script
+- [X] No bug
 - [ ] Interface
+- [ ] Database
 ***
 ### License Copyright (c) 2021 Angell Belger
 
