@@ -1,7 +1,7 @@
 import datetime
 from os import name
 from utl.lay import colour as cl
-from utl.aqv import onlyBool, readint, titleFor, boolTitle, bool, boolNumber
+from utl.aqv import onlyBool, readint, showData, titleFor, boolTitle, bool, boolNumber
 from utl.objects import menu, dataBase, dateBO, people, typeAssistance
 
 print('\n\033[35mHello, World.\033[m\n')
@@ -171,19 +171,7 @@ while okMain:
 
                 offenderRAM = ''
                 offenderRAM = boolTitle('Offender: ')
-
-                counter = 0
-                for index in range(0, len(dataBase)):
-                    if offenderRAM in dataBase[index]["offender"]:
-                        counter += 1
-                        titleFor('Search by Offender', 50)
-                        print(f'\033[35m{dataBase[index]["date"]["dateDay"]}/{dataBase[index]["date"]["dateMonth"]}/{dataBase[index]["date"]["dateYear"]}\033[m - Time: \033[35m{dataBase[index]["time"]}\033[m')
-                        print(f'Infrator:{cl["p"]} {dataBase[index]["offender"]}{cl["limit"]}')
-                        print(f'Endereco/local:{cl["p"]} {dataBase[index]["adress"]}{cl["limit"]}')
-                        print(f'Ponto de Referência:{cl["p"]} {dataBase[index]["reference"]}{cl["limit"]}')
-                        print(f'POLICE:{cl["p"]} {dataBase[index]["police"]}{cl["limit"]}')
-                        print(f'Acionamento por:{cl["p"]} {dataBase[index]["trigger"]}{cl["limit"]}')
-                        print(f'Tipo de Atendimento:{cl["p"]} {dataBase[index]["type"]}{cl["limit"]}')
+                showData(offenderRAM, 'offender')
                     
                 if counter == 0:
                     print('\nNothing Found.\n')
@@ -193,19 +181,10 @@ while okMain:
 
                 policeRAM = ''
                 policeRAM = boolTitle('POLICE: ')
+                showData(policeRAM, 'police')
 
-                counter = 0
-                for index in range(0, len(dataBase)):
-                    if policeRAM in dataBase[index]["police"]:
-                        counter += 1
-                        titleFor('Search by POLICE', 50)
-                        print(f'\033[35m{dataBase[index]["date"]["dateDay"]}/{dataBase[index]["date"]["dateMonth"]}/{dataBase[index]["date"]["dateYear"]}\033[m - Time: \033[35m{dataBase[index]["time"]}\033[m')
-                        print(f'Infrator:{cl["p"]} {dataBase[index]["offender"]}{cl["limit"]}')
-                        print(f'Endereco/local:{cl["p"]} {dataBase[index]["adress"]}{cl["limit"]}')
-                        print(f'Ponto de Referência:{cl["p"]} {dataBase[index]["reference"]}{cl["limit"]}')
-                        print(f'POLICE:{cl["p"]} {dataBase[index]["police"]}{cl["limit"]}')
-                        print(f'Acionamento por:{cl["p"]} {dataBase[index]["trigger"]}{cl["limit"]}')
-                        print(f'Tipo de Atendimento:{cl["p"]} {dataBase[index]["type"]}{cl["limit"]}')
+                if counter == 0:
+                    print('\nNothing Found.\n')
 
             elif option == 4:
                 ok = False

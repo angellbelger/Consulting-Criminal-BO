@@ -1,4 +1,5 @@
 from utl.lay import colour as cl
+from utl.objects import dataBase
 
 
 def readint(msg):
@@ -99,3 +100,18 @@ def boolNumber(txt):
 
 def line(x):
     print('-' * x)
+
+
+def showData(query, actor):
+    counter = 0
+    for index in range(0, len(dataBase)):
+        if query in dataBase[index][f"{actor}"]:
+            counter += 1
+            titleFor('Search by []', 50)
+            print(f'\033[35m{dataBase[index]["date"]["dateDay"]}/{dataBase[index]["date"]["dateMonth"]}/{dataBase[index]["date"]["dateYear"]}\033[m - Time: \033[35m{dataBase[index]["time"]}\033[m')
+            print(f'Infrator:{cl["p"]} {dataBase[index]["offender"]}{cl["limit"]}')
+            print(f'Endereco/local:{cl["p"]} {dataBase[index]["adress"]}{cl["limit"]}')
+            print(f'Ponto de Referência:{cl["p"]} {dataBase[index]["reference"]}{cl["limit"]}')
+            print(f'POLICE:{cl["p"]} {dataBase[index]["police"]}{cl["limit"]}')
+            print(f'Acionamento por:{cl["p"]} {dataBase[index]["trigger"]}{cl["limit"]}')
+            print(f'Tipo de Atendimento:{cl["p"]} {dataBase[index]["type"]}{cl["limit"]}')
