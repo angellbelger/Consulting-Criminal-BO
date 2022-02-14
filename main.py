@@ -149,6 +149,7 @@ while okMain:
                 dateRAM["dateDay"] = readint('Day: ')
                 dateRAM["dateMonth"] = readint('Month: ')
                 dateRAM["dateYear"] = readint('Year: ')
+                showData(dateRAM, 'date')
 
                 counter = 0
                 for index in range(0, len(dataBase)):
