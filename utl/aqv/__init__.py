@@ -115,3 +115,6 @@ def showData(query, actor):
             print(f'POLICE:{cl["p"]} {dataBase[index]["police"]}{cl["limit"]}')
             print(f'Acionamento por:{cl["p"]} {dataBase[index]["trigger"]}{cl["limit"]}')
             print(f'Tipo de Atendimento:{cl["p"]} {dataBase[index]["type"]}{cl["limit"]}')
+    
+    if counter == 0:
+        print('\nNothing Found.\n')

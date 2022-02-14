@@ -149,7 +149,6 @@ while okMain:
                 dateRAM["dateDay"] = readint('Day: ')
                 dateRAM["dateMonth"] = readint('Month: ')
                 dateRAM["dateYear"] = readint('Year: ')
-                showData(dateRAM, 'date')
 
                 counter = 0
                 for index in range(0, len(dataBase)):
@@ -163,9 +162,6 @@ while okMain:
                         print(f'POLICE:{cl["p"]} {dataBase[index]["police"]}{cl["limit"]}')
                         print(f'Acionamento por:{cl["p"]} {dataBase[index]["trigger"]}{cl["limit"]}')
                         print(f'Tipo de Atendimento:{cl["p"]} {dataBase[index]["type"]}{cl["limit"]}')
-                    
-                if counter == 0:
-                    print('\nNothing Found.\n')
             
             # SEARCH offender by offender
             elif option == 2:
@@ -173,9 +169,6 @@ while okMain:
                 offenderRAM = ''
                 offenderRAM = boolTitle('Offender: ')
                 showData(offenderRAM, 'offender')
-                    
-                if counter == 0:
-                    print('\nNothing Found.\n')
             
             # SEARCH POLICE by POLICE
             elif option == 3:
@@ -183,9 +176,6 @@ while okMain:
                 policeRAM = ''
                 policeRAM = boolTitle('POLICE: ')
                 showData(policeRAM, 'police')
-
-                if counter == 0:
-                    print('\nNothing Found.\n')
 
             elif option == 4:
                 ok = False
