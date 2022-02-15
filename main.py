@@ -4,7 +4,7 @@ from utl.lay import colour as cl
 from utl.aqv import onlyBool, readint, showData, titleFor, boolTitle, bool, boolNumber
 from utl.objects import menu, dataBase, dateBO, people, typeAssistance
 
-print('\n\033[35mHello, World.\033[m\n')
+print('{}Hello, World.{}'.format('\033[35m', '\033[m'))
 
 option = 0
 
